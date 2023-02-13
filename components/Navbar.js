@@ -34,7 +34,7 @@ const Navbar = () => {
                  <div className={ style.menuItem }></div>
             )}
             <div className={ style.userImageContainer }>
-                <Image className={ style.userImage } src={ avatar } height={ 40 } width={ 40 }/>
+                <Image className={ style.userImage } src={ avatar } height={ 40 } width={ 40 } alt=''/>
             </div>
             { currentAccount ? (
                 <div className={ style.connectButton }>

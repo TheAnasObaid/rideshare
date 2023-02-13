@@ -25,7 +25,7 @@ const carList = [
     {
         service: 'RideX',
         icon: rideX,
-        priceMultiplier: 1
+        priceMultiplier: 1,
     },
     {
         service: 'RideXL',
@@ -58,10 +58,11 @@ const RideSelector = () => {
         <div className={ style.carList }>
             { carList.map(
                 (car, index) => (
-                    <div className={ style.car }>
+                    <div key={index} className={ style.car }>
                         <Image 
                             src={ car.icon }
                             height={70}
+                            alt=''
                         />
                         <div className={ style.carDetails }>
                             <div className={ style.carService }>{ car.service }</div>
@@ -74,6 +75,7 @@ const RideSelector = () => {
                             <Image 
                                 src={ethLogo}
                                 height={25}
+                                alt=''
                             />
                         </div>
                     </div>
