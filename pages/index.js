@@ -1,3 +1,6 @@
+import Navbar from "@/components/Navbar"
+
+
 const style = {
   wrapper: `h-screen w-screen flex flex-col`,
 }
@@ -5,7 +8,7 @@ const style = {
 export default function Home() {
   return (
     <div className={ style.wrapper }>
-      {/* <Navbar /> */}
+      <Navbar />
       <div className={ style.main }>
         <div className={ style.mapContainer }>
           {/* <Map /> */}
