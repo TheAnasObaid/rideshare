@@ -1,4 +1,4 @@
-// import RideSelector from "./RideSelector"
+import RideSelector from "./RideSelector"
 
 
 const style = {
@@ -12,7 +12,7 @@ const Confirm = () => {
   return (
     <div className={ style.wrapper }>
         <div className={ style.rideSelectorContainer }>
-          {/* <RideSelector /> */}
+          <RideSelector />
         </div>
         <div className={ style.confirmButtonContainer }>
           <div className={ style.confirmButton }>
