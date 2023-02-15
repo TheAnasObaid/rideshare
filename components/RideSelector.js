@@ -1,10 +1,6 @@
 import Image from 'next/image'
-import rideX from '../assets/rides/rideX.png'
-import rideXL from '../assets/rides/rideXL.png'
-import rideSelect from '../assets/rides/rideSelect.png'
-import rideBlack from '../assets/rides/rideBlack.png'
-import rideBlackSuv from '../assets/rides/rideBlackSuv.png'
-import ethLogo from '../assets/eth-logo.png'
+import { useEffect, useState } from 'react'
+import ethLogo from '../assets/eth-logo.png' 
 
 
 const style = {
@@ -21,47 +17,38 @@ const style = {
     price: `mr-[-0.8rem]`,
 }
 
-const carList = [
-    {
-        service: 'RideX',
-        icon: rideX,
-        priceMultiplier: 1,
-    },
-    {
-        service: 'RideXL',
-        icon: rideXL,
-        priceMultiplier: 1.5
-    },
-    {
-        service: 'RideSelect',
-        icon: rideSelect,
-        priceMultiplier: 2
-    },
-    {
-        service: 'RideBlack',
-        icon: rideBlack,
-        priceMultiplier: 2.5
-    },
-    {
-        service: 'RideBlackSuv',
-        icon: rideBlackSuv,
-        priceMultiplier: 3
-    },
-]
-
 const basePrice = 1543
 
 const RideSelector = () => {
-  return (
+    const [carList, setCarList] = useState([])
+
+    useEffect( () => {
+        ; (async () => {
+            try {
+                const response = await fetch('/api/db/getRideTypes')
+                const data = await response.json()
+                
+                setCarList(data.data)
+            } 
+            
+            catch (error) {
+                console.log(error);
+            }
+        })()
+    }
+    )
+
+    return (
     <div className={ style.wrapper }>
         <div className={ style.title }>Choose a ride, or swipe up for more</div>
         <div className={ style.carList }>
             { carList.map(
                 (car, index) => (
-                    <div key={index} className={ style.car }>
+                    <div key={ index } className={ style.car }>
                         <Image 
                             src={ car.icon }
                             height={70}
+                            width={70}
                             alt=''
                         />
                         <div className={ style.carDetails }>
@@ -80,7 +67,7 @@ const RideSelector = () => {
                         </div>
                     </div>
                 )
-            )}
+            ) }
         </div>
     </div>
   )

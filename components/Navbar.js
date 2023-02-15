@@ -13,8 +13,8 @@ const style = {
     connectButton: `text-lg text-black font-medium cursor-pointer ml-2`
 }
 
-// const currentAccount = '0xDd799415cd7627E444DAa8B9D6491295893d2cdC'
-const currentAccount = ''
+const currentAccount = '0xDd799415cd7627E444DAa8B9D6491295893d2cdC'
+// const currentAccount = ''
 const acountName = "Anas"
 
 const Navbar = () => {
