@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { RideContext } from "@/context/rideContext"
+import { useContext, useState } from "react"
 
 const style = {
     wrapper: `pt-2`,
@@ -11,8 +12,7 @@ const style = {
 
 const LocationSelector = () => {
     const [inFocus, setInFocus] = useState('from')
-    const [pickup, setPickup] = useState('')
-    const [dropoff, setDropoff] = useState('')
+    const { pickup, setPickup, dropoff, setDropoff } = useContext(RideContext)
 
     return (
     <div className={ style.wrapper }>

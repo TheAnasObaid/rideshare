@@ -5,8 +5,8 @@ export const RideContext = createContext()
 export const RideProvider = ({ children }) => {
     const [pickup, setPickup] = useState('')
     const [dropoff, setDropoff] = useState('')
-    const [pickupCoordinates, setPickupCoordinates] = useState('')
-    const [dropoffCoordinates, setDropoffCoordinates] = useState('')
+    const [pickupCoordinates, setPickupCoordinates] = useState()
+    const [dropoffCoordinates, setDropoffCoordinates] = useState()
 
     const createLocationCoordinatePromise = (locationName, locationType) => {
         return new Promise(async(resolve, reject) => {
@@ -19,7 +19,7 @@ export const RideProvider = ({ children }) => {
                     location: locationName,
                 })
             })
-
+            
             const data = await response.json()
 
             if (data.message = 'success') {
@@ -42,19 +42,31 @@ export const RideProvider = ({ children }) => {
     }
 
     useEffect( () => {
+        // TODO: not going inside due to empty pickup and dropoff and executing the else block
             if (pickup && dropoff) {
-                ; (async () => { 
+                ;(async () => { 
                     await Promise.all([
                         createLocationCoordinatePromise(pickup, 'pickup'),
                         createLocationCoordinatePromise(dropoff, 'dropoff')
                     ]) 
                 })()
-            }
-            
-            else return
-        }, [])
+            } else return
+        }, [pickup, dropoff])
 
     return (
-        <RideContext.Provider /*value={}*/>{ children }</RideContext.Provider>
+        <RideContext.Provider
+            value={{
+                pickup,
+                setPickup,
+                dropoff,
+                setDropoff,
+                pickupCoordinates,
+                setPickupCoordinates,
+                dropoffCoordinates,
+                setDropoffCoordinates,
+            }}
+        >
+      {children}
+    </RideContext.Provider>
     )
 }

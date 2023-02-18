@@ -1,5 +1,4 @@
-import client from '../../../lib/sanity'
-
+import client from "@/lib/sanity"
 
 const query = `
 *[_type=="rides"]{

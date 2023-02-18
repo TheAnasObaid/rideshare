@@ -1,5 +1,6 @@
 import mapboxgl from "mapbox-gl"
-import { useEffect } from "react"
+import { useEffect, useContext } from "react"
+import { RideContext } from "@/context/rideContext"
 
 
 const style = {
@@ -9,6 +10,11 @@ const style = {
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
 
 const Map = () => {
+  const { pickupCoordinates, dropoffCoordinates } = useContext(RideContext)
+
+  console.log('The coordinates are:')
+  console.log(pickupCoordinates, dropoffCoordinates);
+  
   useEffect( () => {
     const map = new mapboxgl.Map(
         {
@@ -16,12 +22,27 @@ const Map = () => {
             style: 'mapbox://styles/anasobaid/cle35k6xl000601p5921vsc1r',
             zoom: 5.5,
             center: [72.886, 30.887],
+        })
+
+        if (pickupCoordinates) {
+          addToMap(map, pickupCoordinates)
         }
-    )
-  }, [])
+
+        if (dropoffCoordinates) {
+          addToMap(map, dropoffCoordinates)
+        }
+
+        if (pickupCoordinates && dropoffCoordinates) {
+          map.fitBounds([dropoffCoordinates, pickupCoordinates], {padding: 100})
+        }
+  }, [pickupCoordinates, dropoffCoordinates])
+
+  const addToMap = (map, coordinates) => {
+    const marker1 = new mapboxgl.Marker().setLngLat(coordinates).addTo(map)
+  }
 
   return (
-    <div className={ style.wrapper } id='map'></div>
+    <div className={ style.wrapper } id='map' />
   )
 }
 
