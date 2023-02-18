@@ -11,7 +11,7 @@ const style = {
     selectedCar: `border-2 border-black flex p-3 m-2 items-center`,
     carImage: `h-14`,
     carDetails: `ml-2 flex-1`,
-    service: `font-medium`,
+    carService: `font-medium`,
     time: `text-xs text-blue-500`,
     priceContainer: `flex items-center`,
     price: `mr-[-0.8rem]`,

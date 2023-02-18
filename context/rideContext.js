@@ -42,7 +42,6 @@ export const RideProvider = ({ children }) => {
     }
 
     useEffect( () => {
-        // TODO: not going inside due to empty pickup and dropoff and executing the else block
             if (pickup && dropoff) {
                 ;(async () => { 
                     await Promise.all([
