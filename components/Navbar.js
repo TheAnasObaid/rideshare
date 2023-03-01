@@ -1,5 +1,7 @@
 import Image from "next/image"
 import avatar from "../temp/avatar.png"
+import { RideContext } from "@/context/rideContext"
+import { useContext } from 'react'
 
 
 const style = {
@@ -13,25 +15,23 @@ const style = {
     connectButton: `text-lg text-black font-medium cursor-pointer ml-2`
 }
 
-const currentAccount = '0xDd799415cd7627E444DAa8B9D6491295893d2cdC'
-// const currentAccount = ''
-const acountName = "Anas"
-
 const Navbar = () => {
-  return (
+  
+    const { currentAccount, connectWallet, currentUser } = useContext(RideContext)
+    console.log(currentUser)
+
+    return (
     <div className={ style.wrapper }>
         <div className={ style.leftMenu }>
             <div className={ style.logo }>RideShare</div>
             <div className={ style.menuItem }>Ride</div>
             <div className={ style.menuItem }>Drive</div>
         </div>
-        <div className= {style.rightMenu }>
+        <div className= { style.rightMenu }>
             { currentAccount ? (
-                <div className={ style.menuItem }>
-                    { acountName }
-                </div>
+                <div className={ style.connectButton }>{ currentUser.name.split(' ')[0] }</div>            
             ) : (
-                 <div className={ style.menuItem }></div>
+                <div className={ style.connectButton }> </div>
             )}
             <div className={ style.userImageContainer }>
                 <Image className={ style.userImage } src={ avatar } height={ 40 } width={ 40 } alt=''/>
@@ -41,7 +41,7 @@ const Navbar = () => {
                     { currentAccount.slice(0, 5) }....{ currentAccount.slice(39) }
                 </div>
             ) : (
-                <div className={ style.connectButton }>Connect Wallet</div>
+                <div className={ style.connectButton } onClick={ () => connectWallet() }>Connect Wallet</div>
             )}
         </div>
     </div>
