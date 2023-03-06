@@ -10,8 +10,15 @@ const style = {
 };
 
 const Confirm = () => {
-    const { currentAccount, pickup, dropoff, price, selectedRide } =
-        useContext(RideContext);
+    const {
+        currentAccount,
+        pickup,
+        dropoff,
+        price,
+        selectedRide,
+        pickupCoordinates,
+        dropoffCoordinates,
+    } = useContext(RideContext);
 
     const storeTripDetails = async (pickup, dropoff) => {
         try {
@@ -36,14 +43,14 @@ const Confirm = () => {
     return (
         <div className={style.wrapper}>
             <div className={style.rideSelectorContainer}>
-                <RideSelector />
+                {pickupCoordinates && dropoffCoordinates && <RideSelector />}
             </div>
             <div className={style.confirmButtonContainer}>
                 <div
                     className={style.confirmButton}
                     onClick={() => storeTripDetails(pickup, dropoff)}
                 >
-                    Confirm {selectedRide.service}
+                    Confirm {selectedRide.service || "RideX"}
                 </div>
             </div>
         </div>

@@ -21,7 +21,8 @@ const basePrice = 1542;
 
 const RideSelector = () => {
     const [carList, setCarList] = useState([]);
-    const { selectedRide, setSelectedRide, setPrice } = useContext(RideContext);
+    const { selectedRide, setSelectedRide, setPrice, basePrice } =
+        useContext(RideContext);
 
     useEffect(() => {
         (async () => {
@@ -53,12 +54,12 @@ const RideSelector = () => {
                         }`}
                         onClick={() => {
                             setSelectedRide(car);
-                            // setPrice(
-                            //     (
-                            //         (basePrice / 10 ** 5) *
-                            //         car.priceMultiplier
-                            //     ).toFixed(5)
-                            // );
+                            setPrice(
+                                (
+                                    (basePrice / 10 ** 5) *
+                                    car.priceMultiplier
+                                ).toFixed(5)
+                            );
                         }}
                     >
                         <Image src={car.icon} height={70} width={70} alt="" />
