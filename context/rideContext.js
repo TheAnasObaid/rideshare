@@ -175,6 +175,7 @@ export const RideProvider = ({ children }) => {
                 price,
                 setPrice,
                 basePrice,
+                metamask,
             }}
         >
             {children}
