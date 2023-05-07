@@ -1,5 +1,5 @@
 import Image from "next/image";
-import avatar from "../temp/avatar.png";
+import avatar from "../../temp/avatar.png";
 import { RideContext } from "@/context/rideContext";
 import { useContext } from "react";
 

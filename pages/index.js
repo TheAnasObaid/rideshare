@@ -1,7 +1,7 @@
-import Navbar from "@/components/Navbar"
-import Map from "@/components/Map"
-import LocationSelector from "@/components/LocationSelector"
-import Confirm from "@/components/Confirm"
+import Navbar from "@/components/user/Navbar"
+import Map from "@/components/user/Map"
+import LocationSelector from "@/components/user/LocationSelector"
+import Confirm from "@/components/user/Confirm"
 
 
 const style = {
