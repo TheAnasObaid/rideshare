@@ -67,7 +67,7 @@ const RideSelector = () => {
                             <div className={style.carService}>
                                 {car.service}
                             </div>
-                            <div className={style.time}>5 min away</div>
+                            {/* <div className={style.time}>5 min away</div> */}
                         </div>
                         <div className={style.priceContainer}>
                             <div className={style.price}>

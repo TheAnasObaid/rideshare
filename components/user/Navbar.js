@@ -6,7 +6,7 @@ import { useContext } from "react";
 const style = {
     wrapper: `h-16 w-full bg-white text-black flex md:justify-around items-center px-60 z-20`,
     leftMenu: `flex gap-4`,
-    logo: `text-3xl text-black font-medium flex cursor-pointer mr-16`,
+    logo: `px-8 py-4 mx-4 text-3xl text-black font-medium flex cursor-pointer text-center mr-16`,
     menuItem: `text-lg text-black font-medium flex items-center mx-4 cursor-pointer`,
     rightMenu: `flex gap-4 items-center`,
     userImageContainer: `mr-2`,
@@ -22,17 +22,9 @@ const Navbar = () => {
         <div className={style.wrapper}>
             <div className={style.leftMenu}>
                 <div className={style.logo}>RideShare</div>
-                <div className={style.menuItem}>Ride</div>
-                <div className={style.menuItem}>Drive</div>
+                {/* <div className={style.menuItem}>Drive</div> */}
             </div>
             <div className={style.rightMenu}>
-                {currentAccount ? (
-                    <div className={style.connectButton}>
-                        {currentUser.name}
-                    </div>
-                ) : (
-                    <div className={style.connectButton}> </div>
-                )}
                 <div className={style.userImageContainer}>
                     <Image
                         className={style.userImage}

@@ -135,8 +135,7 @@ export const RideProvider = ({ children }) => {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    userWalletAddress: address,
-                    name: "Wisal Khan",
+                    userWalletAddress: address
                 }),
             });
         } catch (error) {
