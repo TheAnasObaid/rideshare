@@ -12,13 +12,10 @@ const style = {
     menuLink: `pl-4`
 }
 
-function Navbar() {
+function NavbarDriver() {
   return (
     <div className={style.wrapper}>
           <div className={style.navContainer}>
-              <div>
-                  <h2 className={style.logo}>RideShare</h2>
-              </div>
               <div className={style.menus}>
                   <ul className={style.menu}>
                       <li className={style.menuItem}><FiMonitor /> <a href='#' className={style.menuLink} >Dashboard</a></li>
@@ -32,4 +29,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default NavbarDriver

@@ -4,26 +4,22 @@ import { RideContext } from "@/context/rideContext";
 import { useContext } from "react";
 
 const style = {
-    wrapper: `h-16 w-full bg-white text-black flex md:justify-around items-center px-60 z-20`,
-    leftMenu: `flex gap-4`,
-    logo: `px-8 py-4 mx-4 text-3xl text-black font-medium flex cursor-pointer text-center mr-16`,
+    wrapper: `h-16 w-full bg-white text-black flex items-center md:justify-between z-20`,
+    logo: `px-8 py-4 mx-4 text-3xl font-medium cursor-pointer`,
     menuItem: `text-lg text-black font-medium flex items-center mx-4 cursor-pointer`,
-    rightMenu: `flex gap-4 items-center`,
-    userImageContainer: `mr-2`,
+    userImageContainer: `mr-4`,
     userImage: `h-10 w-10 rounded-full p-px object-cover cursor-pointer`,
-    connectButton: `text-lg text-black font-medium cursor-pointer ml-2`,
+    connectButton: `text-lg text-black font-medium cursor-pointer`,
+    rightMenu: `flex items-center mr-16`
 };
 
-const Navbar = () => {
-    const { currentAccount, connectWallet, currentUser } =
+const HeaderUser = () => {
+    const { currentAccount, connectWallet } =
         useContext(RideContext);
 
     return (
         <div className={style.wrapper}>
-            <div className={style.leftMenu}>
-                <div className={style.logo}>RideShare</div>
-                {/* <div className={style.menuItem}>Drive</div> */}
-            </div>
+            <div className={style.logo}>RideShare</div>
             <div className={style.rightMenu}>
                 <div className={style.userImageContainer}>
                     <Image
@@ -52,4 +48,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default HeaderUser;
