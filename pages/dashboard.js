@@ -1,12 +1,11 @@
-import HeaderDriver from "@/components/driver/HeaderDriver"
-import NavbarDriver from "@/components/driver/NavbarDriver"
-
+import Header from "@/components/Header";
+import NavbarDriver from "@/components/driver/NavbarDriver";
 
 export default function Dashboard() {
-    return (
-        <div>
-            <HeaderDriver />
-            <NavbarDriver />
-        </div>
-    )
+  return (
+    <div>
+      <Header />
+      <NavbarDriver />
+    </div>
+  );
 }
