@@ -1,4 +1,4 @@
-export const tripsSchema = {
+export const tripSchema = {
   name: 'trips',
   type: 'document',
   title: 'Trips',

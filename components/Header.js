@@ -10,8 +10,7 @@ const style = {
 };
 
 const Header = () => {
-  const { currentAccount, connectWallet, currentUser } =
-    useContext(RideContext);
+  const { currentAccount, connectWallet } = useContext(RideContext);
 
   return (
     <div className={style.wrapper}>
@@ -19,7 +18,7 @@ const Header = () => {
         RideShare
       </Link>
       {currentAccount ? (
-        <div className={style.connectButton}>{currentUser.name}</div>
+        <div className={style.connectButton}></div>
       ) : (
         <div className={style.connectButton}> </div>
       )}

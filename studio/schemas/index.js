@@ -1,10 +1,5 @@
-import { userSchema } from "./userSchema"
-import { ridesSchema } from "./ridesSchema"
-import { tripsSchema } from "./tripsSchema"
+import {userSchema} from './userSchema'
+import {rideSchema} from './rideSchema'
+import {tripSchema} from './tripSchema'
 
-
-export const schemaTypes = [
-    userSchema,
-    ridesSchema,
-    tripsSchema
-]
+export const schemaTypes = [userSchema, rideSchema, tripSchema]
