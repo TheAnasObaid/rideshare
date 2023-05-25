@@ -28,7 +28,7 @@ export default function driver() {
         <Link target="_blank" href="https://forms.gle/THJ9cHKkvYv4fTyu6">
           <div className={style.newDriverContainer}>
             <div className={style.linkText}>
-              I'm a<br /> New Driver
+              I am a<br /> New Driver
               <RxArrowTopRight className={style.linkIcon} />
             </div>
           </div>
@@ -36,7 +36,7 @@ export default function driver() {
         <Link href="https://rideshare.sanity.studio/">
           <div className={style.existingDriverContainer}>
             <div className={style.linkText}>
-              I'm a<br /> Existing One
+              I am a<br /> Existing One
               <RxArrowTopRight className={style.linkIcon} />
             </div>
           </div>

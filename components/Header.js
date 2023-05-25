@@ -22,7 +22,7 @@ const Header = () => {
       </Link>
       <div className={style.rightMenu}>
         <div className={style.driverButton}>
-          <Link href="/driver">I'm Driver</Link>
+          <Link href="/driver">I am Driver</Link>
         </div>
         {currentAccount ? (
           <div className={style.walletAddress}>
