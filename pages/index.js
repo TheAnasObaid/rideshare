@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
-import Map from "@/components/user/Map";
-import LocationSelector from "@/components/user/LocationSelector";
-import Confirm from "@/components/user/Confirm";
+import Map from "@/components/Map";
+import LocationSelector from "@/components/LocationSelector";
+import Confirm from "@/components/Confirm";
 
 const style = {
   wrapper: `h-screen w-screen flex flex-col`,

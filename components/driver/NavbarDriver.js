@@ -1,5 +1,5 @@
 import React from "react";
-import { FiLogOut, FiMail, FiMonitor, FiUser } from "react-icons/fi";
+import { RxDashboard, RxEnvelopeClosed, RxPerson } from "react-icons/rx";
 
 const style = {
   wrapper: `bg-gray-100`,
@@ -18,27 +18,21 @@ function NavbarDriver() {
         <div className={style.menus}>
           <ul className={style.menu}>
             <li className={style.menuItem}>
-              <FiMonitor />{" "}
-              <a href="#" className={style.menuLink}>
+              <RxDashboard />
+              <a href="/dashboard" className={style.menuLink}>
                 Dashboard
               </a>
             </li>
             <li className={style.menuItem}>
-              <FiMail />
-              <a href="#" className={style.menuLink}>
-                Messages
+              <RxEnvelopeClosed />
+              <a href="/requests" className={style.menuLink}>
+                Requests
               </a>
             </li>
             <li className={style.menuItem}>
-              <FiUser />
-              <a href="#" className={style.menuLink}>
+              <RxPerson />
+              <a href="/users" className={style.menuLink}>
                 Users
-              </a>
-            </li>
-            <li className={style.menuItem}>
-              <FiLogOut />
-              <a href="#" className={style.menuLink}>
-                Logout
               </a>
             </li>
           </ul>

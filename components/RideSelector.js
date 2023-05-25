@@ -1,7 +1,7 @@
 import { RideContext } from "@/context/rideContext";
 import Image from "next/image";
 import { useContext, useEffect, useState } from "react";
-import ethLogo from "../../assets/eth-logo.png";
+import ethLogo from "../assets/eth-logo.png";
 
 const style = {
   wrapper: `h-full flex flex-col`,
