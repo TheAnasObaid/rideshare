@@ -5,9 +5,15 @@ export const rideSchema = {
 
   fields: [
     {
-      name: 'walletAddress',
+      name: 'tripStatus',
       type: 'string',
-      title: 'Wallet Address',
+      title: 'Trip Status',
+      options: {
+        list: [
+          {title: 'Completed', value: 'completed'},
+          {title: 'In Progress', value: 'inProgress'},
+        ],
+      },
     },
     {
       name: 'pickup',
@@ -18,6 +24,11 @@ export const rideSchema = {
       name: 'dropoff',
       type: 'string',
       title: 'To',
+    },
+    {
+      name: 'walletAddress',
+      type: 'string',
+      title: 'Wallet Address',
     },
     {
       name: 'title',

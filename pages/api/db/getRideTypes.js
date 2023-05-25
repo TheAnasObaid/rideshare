@@ -1,21 +1,25 @@
-import client from "@/lib/sanity"
+import client from "@/lib/sanity";
+
+const pickup = "Kohat";
+const dropoff = "Lahore";
 
 const query = `
-*[_type=="rides"]{
+*[_type=="rides" && pickup=="${pickup}" && dropoff=="${dropoff}"]{
+    "pickup": pickup,
+    "dropoff": dropoff,
     "service": title,
     "icon": icon.asset->url,
     priceMultiplier,
-    orderById,
-}|order(orderById asc)
-`
+}
+`;
 
 const getRideTypes = async (req, res) => {
-    try {
-        const sanityResponse = await client.fetch(query)
-        res.status(200).send({ message: 'success', data: sanityResponse})
-    } catch (error) {
-        res.status(500).send({ message: 'error', data: error.message})
-    }
-}
+  try {
+    const sanityResponse = await client.fetch(query);
+    res.status(200).send({ message: "success", data: sanityResponse });
+  } catch (error) {
+    res.status(500).send({ message: "error", data: error.message });
+  }
+};
 
-export default getRideTypes
+export default getRideTypes;
