@@ -25,7 +25,7 @@ export default function driver() {
             We wish you have a best and safe trip.
           </p>
         </div>
-        <Link target="_blank" href="https://forms.gle/THJ9cHKkvYv4fTyu6">
+        <Link target="_blank" href="https://forms.gle/1fSTMDvExpRbVH9h7">
           <div className={style.newDriverContainer}>
             <div className={style.linkText}>
               I am a<br /> New Driver
@@ -36,7 +36,8 @@ export default function driver() {
         <Link href="https://rideshare.sanity.studio/">
           <div className={style.existingDriverContainer}>
             <div className={style.linkText}>
-              I am a<br /> Existing One
+              I am an
+              <br /> Existing One
               <RxArrowTopRight className={style.linkIcon} />
             </div>
           </div>
