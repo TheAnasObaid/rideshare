@@ -9,7 +9,7 @@ const style = {
   menuItem: `text-lg text-black font-medium flex items-center mx-4 cursor-pointer`,
   connectWalletButton: `text-lg text-white font-medium cursor-pointer ml-2 bg-black p-3 rounded-md`,
   driverButton: `text-lg text-black font-medium cursor-pointer ml-2 hover:bg-gray-100 p-3 rounded-md`,
-  walletAddress: `text-lg text-black font-medium ml-2 p-3 rounded-md`,
+  walletAddress: `text-lg text-black font-medium ml-2 p-3`,
 };
 
 const Header = () => {
